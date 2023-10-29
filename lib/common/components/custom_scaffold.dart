@@ -35,27 +35,23 @@ class CustomScaffold extends StatelessWidget {
                     ),
                   ),
                 ),
-                SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: paddingTop),
-                    child: body,
-                  ),
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: paddingTop),
+                  child: body,
                 ),
               ],
             )
-          : SingleChildScrollView(
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                margin: const EdgeInsets.only(top: 60.0),
-                padding: const EdgeInsets.only(bottom: 60.0),
-                decoration: const BoxDecoration(
-                  color: ColorResource.white,
-                  borderRadius: BorderRadius.vertical(
-                    top: Radius.circular(10.0),
-                  ),
+          : Container(
+              width: MediaQuery.of(context).size.width,
+              margin: const EdgeInsets.only(top: 60.0),
+              padding: const EdgeInsets.only(bottom: 60.0),
+              decoration: const BoxDecoration(
+                color: ColorResource.white,
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(10.0),
                 ),
-                child: body,
               ),
+              child: body,
             ),
       bottomNavigationBar: bottomNavigationBar,
     );

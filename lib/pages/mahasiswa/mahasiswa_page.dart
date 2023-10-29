@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:siakad_app/common/constants/colors.dart';
+import 'package:siakad_app/pages/mahasiswa/schedule_mk_page.dart';
 
 import '../../common/constants/icons.dart';
 import 'dashboard_page.dart';
@@ -23,16 +24,7 @@ class _MahasiswaPageState extends State<MahasiswaPage> {
 
   final List<Widget> _pages = [
     const DashboardPage(),
-    const Center(
-      child: Text(
-        'Schedule Page',
-        style: TextStyle(
-          color: ColorResource.black,
-        ),
-      ),
-    ),
-
-    // const SchedulesPage(),
+    const SchedulesPage(),
     const ProfilePage(role: 'Mahasiswa')
   ];
 

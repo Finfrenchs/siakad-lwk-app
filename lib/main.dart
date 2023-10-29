@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:siakad_app/bloc/khs/khs_bloc.dart';
 import 'package:siakad_app/bloc/login/login_bloc.dart';
 import 'package:siakad_app/bloc/logout/logout_bloc.dart';
+import 'package:siakad_app/bloc/schedule/schedule_bloc.dart';
 import 'package:siakad_app/data/datasources/auth_local_datasource.dart';
 import 'package:siakad_app/data/datasources/auth_remote_datasource.dart';
 import 'package:siakad_app/pages/auth/auth_page.dart';
@@ -9,6 +11,9 @@ import 'package:siakad_app/pages/auth/splash_page.dart';
 import 'package:siakad_app/pages/civitas_akademik/dosen_page.dart';
 import 'package:siakad_app/pages/mahasiswa/mahasiswa_page.dart';
 import 'package:flutter/src/widgets/framework.dart';
+
+import 'data/datasources/khs_remote_datasource.dart';
+import 'data/datasources/schedule_remote_datasource.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +31,12 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => LogoutBloc(AuthRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => KhsBloc(KhsRemoteDatasource()),
+        ),
+        BlocProvider(
+          create: (context) => ScheduleBloc(ScheduleRemoteDatasource()),
         ),
       ],
       child: MaterialApp(

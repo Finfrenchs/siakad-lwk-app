@@ -29,8 +29,8 @@ class _ProfilePageState extends State<ProfilePage> {
     return CustomScaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        shrinkWrap: true,
-        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: false,
+        //physics: const NeverScrollableScrollPhysics(),
         children: [
           const SizedBox(height: 60.0),
           Container(
@@ -296,6 +296,9 @@ class _ProfilePageState extends State<ProfilePage> {
                 );
               });
             },
+          ),
+          const SizedBox(
+            height: 20,
           ),
         ],
       ),
